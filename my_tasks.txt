@@ -1,0 +1,3 @@
+iterator
+? destructor ?
+egyéb tylumság
