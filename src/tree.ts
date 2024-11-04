@@ -15,8 +15,8 @@ class Tree {
 
     private get Depth() : number {
         
-        let leftDepth = this.left?.Depth || 0;
-        let rightDepth = this.right?.Depth || 0;
+        let leftDepth = this.left ? this.left.Depth : 0;
+        let rightDepth = this.right ? this.right.Depth : 0;
         return (leftDepth < rightDepth ? leftDepth : rightDepth) + 1;
     }
 
@@ -59,6 +59,15 @@ class Tree {
             return false;
         }
         return this.value == otherTree.value;
+    }
+
+    public ToString(): string {
+
+        const leftStr = this.left?.ToString();
+        const rightStr = this.right?.ToString();
+
+        return `${this.value}(${leftStr}, ${rightStr})`;
+
     }
 }
 
