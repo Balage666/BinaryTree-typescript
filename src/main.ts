@@ -14,6 +14,6 @@ tree.Add(25);
 
 //console.log('Hello, world!')
 
-for(const value of tree) {
-	console.log(value.Value);
+for(const {Value} of tree) {
+	console.log(Value);
 }
