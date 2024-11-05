@@ -1,10 +1,20 @@
-class Tree {
+import {TreeIterator} from "./treeiterator";
+
+class Tree implements Iterable<Tree> {
 
     private value!: number;
 
     private left: Tree | null;
 
     private right: Tree | null;
+
+    public get Left() : Tree | null {
+        return this.left;
+    }
+
+    public get Right() : Tree | null {
+        return this.right;
+    }
 
     private set Value(v: number) {
         if (v <= 0) {
@@ -24,6 +34,10 @@ class Tree {
         this.Value = value;
         this.left = null;
         this.right = null;
+    }
+
+    [Symbol.iterator](): Iterator<Tree, any, any> {
+        return new TreeIterator(this);
     }
 
     public get Value() : number {

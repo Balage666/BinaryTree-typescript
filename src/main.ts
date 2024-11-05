@@ -10,6 +10,10 @@ tree.Add(25);
 
 // let tree2 : Tree = new Tree(20);
 
-console.log(tree);
+//console.log(tree);
 
-console.log('Hello, world!')
+//console.log('Hello, world!')
+
+for(const value of tree) {
+	console.log(value.Value);
+}
